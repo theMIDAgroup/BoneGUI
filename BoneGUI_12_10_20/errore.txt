@@ -1,0 +1,46 @@
+Write Dicom
+Error using dicom_add_attr>validate_data (line 122)
+Attribute (0008,0106) has wrong data type.
+
+Error in dicom_add_attr (line 107)
+attr_str(pos).Data = validate_data(data, attr_str(pos),
+specificCharacterSet);
+
+Error in dicom_convert_meta_to_attr (line 39)
+    attr = dicom_add_attr([], tag(1), tag(2), dictionary,
+    specificCharacterSet, data, VR);
+
+Error in dicom_convert_meta_to_attr>encode_item (line 151)
+    new_attr = dicom_convert_meta_to_attr(attr_names{p},
+    item_struct, dictionary, txfr, specificCharacterSet);
+
+Error in dicom_convert_meta_to_attr>encode_SQ (line 125)
+    data = encode_item(SQ_struct.(items{p}), dictionary, txfr,
+    specificCharacterSet);
+
+Error in dicom_convert_meta_to_attr (line 26)
+    data = encode_SQ(metadata.(attr_name), dictionary, txfr,
+    specificCharacterSet);
+
+Error in dicom_copy_IOD (line 49)
+    new_attr = dicom_convert_meta_to_attr(attr_name, metadata,
+    dictionary, options.txfr, specificCharacterSet);
+
+Error in dicomwrite>write_message (line 279)
+        [attrs, status] = dicom_copy_IOD(X, map, ...
+
+Error in dicomwrite (line 210)
+    [status, options] = write_message(X, filename, map,
+    metadata, options);
+
+Error in Write_Dicom (line 71)
+                dicomwrite(I_PTmarrow,str_save,INFO_PT,'CreateMode','copy');
+
+Error in main_batch>run (line 199)
+           Write_Dicom;
+
+Error in main_batch (line 8)
+feval(action,varargin{:});
+ 
+219     rethrow(ME)
+the Image Position Patient is different in CT and PT series

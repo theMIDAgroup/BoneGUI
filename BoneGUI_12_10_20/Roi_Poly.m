@@ -1,0 +1,1 @@
+function Roi_Poly()global pet_gui;RoiKind='impoly';RoiPosition=[236,236;236,246;236,266;246,266;256,266;266,266;266,256;266,236];Put_Roi(RoiKind,RoiPosition);set(pet_gui.PANELroi.PANEL3.PB2,'enable','on');end
